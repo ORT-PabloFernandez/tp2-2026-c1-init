@@ -22,12 +22,29 @@ const inventors = [
 
 //inventors.forEach(inventor => console.log(inventor.first));
 
-inventors
-    .filter(inventor => inventor.year > 1800)
-    .forEach(inventor => console.log(inventor.first));
+// inventors
+//     .filter(inventor => inventor.year > 1800)
+//     .forEach(inventor => console.log(inventor.first));
 
-//TODO: con el array que esta en data, inventors.js. Probar las funciones inmutables
+// TODO: con el array que esta en data, inventors.js. Probar las funciones inmutables
 // find, findIndex, some, every, sort, reduce
+// Ejercicio 1: Buscar el inventor llamado Kepler y retornar el objeto completo
+// Ejercicio 2: Todos los inventores nacieron despues del 1500? (por si o por no)
+// Ejercicio 3: Ordenar los inventores por año de nacimiento, del mas antiguo al mas reciente
+// Ejercicio 4: Obtener la suma de todos los años de nacimiento de los inventores
 
 
+// Map para tranformar un array a un formato especifico. 
 
+inventors
+    .map(
+        inventor => {
+            return (
+                {
+                    fullname: `${inventor.first} ${(inventor.last.toUpperCase())}`,
+                    year: inventor.year
+                }
+            )
+        }
+    )
+    .forEach(inventor => console.log(inventor.fullname));
